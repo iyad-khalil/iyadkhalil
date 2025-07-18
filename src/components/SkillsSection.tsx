@@ -9,29 +9,45 @@ export function SkillsSection() {
 
   const skillCategories = [
     {
-      title: "Programming Languages",
-      skills: ["Python", "Java", "JavaScript", "Dart", "HTML", "CSS", "PHP", "SQL"]
+      title: "Programming",
+      skills: [
+        "Python", "TypeScript", "React", "Java", "JavaScript", "Dart", "HTML", "CSS", "PHP",
+        "SQL (MySQL, PostgreSQL)"
+      ],
     },
     {
-      title: "Data Engineering & DevOps",
-      skills: ["FastAPI", "Docker", "Microsoft Azure", "NGINX", "ETL Pipelines", "Power BI"]
+      title: "Data Engineering & MLOps",
+      skills: [
+        "FastAPI", "Docker", "Microsoft Azure (VM, Storage)", "NGINX", "LangChain", "MCP",
+        "Streamlit", "XGBoost", "Custom ETL Pipelines", "Power BI", "MLflow", "Conda",
+        "RESTful API Deployment"
+      ],
+    },
+    {
+      title: "LLM & NLP",
+      skills: [
+        "Prompt Engineering", "Retrieval-Augmented Generation (RAG)", "Azure OpenAI", "LangChain Agents"
+      ],
     },
     {
       title: "Frameworks & Libraries",
-      skills: ["TensorFlow", "Scikit-learn", "Keras", "Pandas", "NumPy", "Flask", "React", "Next.js"]
+      skills: [
+        "TensorFlow", "Keras", "Scikit-learn", "Hugging Face Transformers", "Pandas", "NumPy",
+        "Matplotlib", "Seaborn", "Flask", "Node.js", "React", "Next.js", "Angular"
+      ],
     },
     {
       title: "Testing & QA",
-      skills: ["Cypress", "Selenium", "SonarQube", "JMeter"]
+      skills: ["Cypress", "Selenium", "SonarQube", "JMeter"],
     },
     {
       title: "Project Management",
-      skills: ["Scrum", "Trello", "Jira"]
+      skills: ["Agile (Scrum)", "Trello", "Jira"],
     },
     {
       title: "Tools",
-      skills: ["Git", "VS Code", "Postman", "PyCharm", "IntelliJ"]
-    }
+      skills: ["Git", "VS Code", "PyCharm", "IntelliJ", "Postman", "Jupyter Notebook"],
+    },
   ];
 
   const containerVariants = {
@@ -74,7 +90,7 @@ export function SkillsSection() {
             className="flex flex-col md:flex-row gap-8 md:gap-16"
             variants={containerVariants}
           >
-            {/* Left tabs */}
+            {/* Category Tabs */}
             <div className="md:w-1/4 flex md:flex-col overflow-x-auto md:overflow-x-visible space-x-4 md:space-x-0 md:space-y-1 border-b md:border-b-0 md:border-l border-slate-700 pb-4 md:pb-0">
               {skillCategories.map((cat, index) => (
                 <button
@@ -92,7 +108,7 @@ export function SkillsSection() {
               ))}
             </div>
 
-            {/* Skills List */}
+            {/* Skills Content */}
             <motion.div
               className="md:w-3/4 md:pl-8"
               variants={itemVariants}
