@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+/*import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Github, ExternalLink, Folder } from "lucide-react";
 import React from "react";
@@ -58,7 +58,7 @@ export function ProjectsSection() {
             <span className="mr-4 font-thin" style={{ color: "#ccd6f6" }}>/</span> projects
           </motion.h2>
           
-          {/* Featured Projects */}
+          
           {projects.filter(project => project.featured).map((project, index) => (
             <motion.div 
               key={project.title}
@@ -66,7 +66,7 @@ export function ProjectsSection() {
               className="mb-24"
             >
               <div className="relative md:grid md:grid-cols-12 gap-4 items-center">
-                {/* Project image */}
+                
                 <div className={`md:col-span-7 relative group mb-6 md:mb-0 ${index % 2 === 1 ? 'md:order-2' : ''}`}>
                   <img 
                     src={project.image}
@@ -85,7 +85,7 @@ export function ProjectsSection() {
                   </a>
                 </div>
                 
-                {/* Project content */}
+                
                 <div className={`md:col-span-5 ${index % 2 === 1 ? 'md:order-1 md:pr-6 text-right' : 'md:pl-6'}`}>
                   <p className="text-primary font-mono mb-2">Featured Project</p>
                   <h3 className="text-2xl font-semibold text-white mb-4">{project.title}</h3>
@@ -122,7 +122,6 @@ export function ProjectsSection() {
             </motion.div>
           ))}
           
-          {/* Non-featured Projects */}
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
             variants={containerVariants}
@@ -170,3 +169,5 @@ export function ProjectsSection() {
     </section>
   );
 }
+
+*/

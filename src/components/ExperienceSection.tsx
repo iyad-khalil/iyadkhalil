@@ -18,15 +18,32 @@ export function ExperienceSection() {
       location: "Casablanca, Morocco || Remote",
       period: "March 2025 - Present",
       responsibilities: [
-        "Designed and developed a hybrid machine learning model combining LSTM and XGBoost for forecasting daily pharmacy revenue with 93.21% accuracy",
-        "Engineered a custom ETL pipeline to clean, transform and prepare data from multiple pharmacy sources for model training",
-        "Built a fraud detection system to identify suspicious transaction patterns and potential losses",
-        "Deployed the entire solution as a RESTful API using FastAPI and Docker for easy integration",
-        "Orchestrated the deployment on Microsoft Azure with NGINX as reverse proxy and HTTPS security protocols",
-        "Implemented comprehensive API documentation and testing interface with Postman",
-        "Created automated monitoring dashboards to track model performance and data drift"
+        "Developed a hybrid LSTM + XGBoost model for multivariate forecasting of pharmacy revenue based on enriched time series data.",
+        "Engineered 25+ explanatory features including sales history, holidays, seasonality, patient behavior, volatility, long-term trends, and more.",
+        "Achieved an overall prediction accuracy of 93.21%, with SMAPE < 10% on real-world test sets.",
+        "Designed a secure RESTful API using FastAPI, containerized with Docker, served with NGINX, and deployed on a Linux Azure VM.",
+        "Built an interactive Streamlit dashboard for real vs. predicted comparisons, alerting system, and percentile-based pharmacy ranking.",
+        "Integrated an intelligent conversational agent using Azure OpenAI + LangChain, capable of generating personalized recommendations from model outputs.",
+        "Implemented a robust MLOps architecture with model versioning, virtual environments (Conda), API monitoring (Postman), and a fully reproducible pipeline."
       ],
-      skills: ["Python", "FastAPI", "Docker", "Azure", "XGBoost", "LSTM", "Postman"]
+      skills: ["Python", "FastAPI", "Docker", "Azure", "XGBoost", "LSTM", "LangChain", "Streamlit"]
+    },
+    {
+      title: "Artificial Intelligence Engineer",
+      company: "Université Côte d’Azur",
+      location: "Nice, France || Remote",
+      period: "March 2025 - June 2025",
+      responsibilities: [
+        "Developed a full-stack SaaS e-commerce platform enabling multiple vendors to sell products with integrated AI features and real-time business logic.",
+        "Designed a custom ML-based recommendation engine combining collaborative filtering (Jaccard similarity) and content-based scoring (category, price, tags) with <100ms latency via WebGPU.",
+        "Integrated OpenAI GPT-4 for automatic product description generation and translation, enhancing SEO and multilingual reach.",
+        "Implemented Hugging Face SegFormer in-browser for image segmentation and background removal, fully client-side and GPU-accelerated.",
+        "Developed predictive analytics for vendors (SEO score, market fit, conversion rate, competition) using custom scoring algorithms.",
+        "Architected with React + TypeScript + Tailwind CSS on the frontend and Supabase (PostgreSQL, Edge Functions, Auth, Storage) as a backend-as-a-service.",
+        "Used Stripe for payment processing, Supabase Realtime for live order updates, and enforced strict Row Level Security (RLS) per vendor.",
+        "Built advanced seller dashboard with intelligent order flow (pending → shipped), label generation, and hybrid ML recommendations in the shopping cart."
+      ],
+      skills: ["React", "TypeScript", "Tailwind CSS", "Supabase", "OpenAI", "HuggingFace", "WebGPU", "Stripe"]
     },
     {
       title: "Automation Engineer",
@@ -100,7 +117,6 @@ export function ExperienceSection() {
             className="flex flex-col md:flex-row gap-8 md:gap-16"
             variants={containerVariants}
           >
-            {/* Company tabs */}
             <div className="md:w-1/4 flex md:flex-col overflow-x-auto md:overflow-x-visible space-x-4 md:space-x-0 md:space-y-1 border-b md:border-b-0 md:border-l border-slate-700 pb-4 md:pb-0">
               {experiences.map((exp, index) => (
                 <button
@@ -118,7 +134,6 @@ export function ExperienceSection() {
               ))}
             </div>
 
-            {/* Experience details */}
             <motion.div 
               className="md:w-2/3 lg:w-3/4 md:pl-8"
               variants={itemVariants}
