@@ -1,4 +1,4 @@
-/*import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Github, ExternalLink, Folder } from "lucide-react";
 import React from "react";
@@ -169,5 +169,3 @@ export function ProjectsSection() {
     </section>
   );
 }
-
-*/
