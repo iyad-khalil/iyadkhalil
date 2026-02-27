@@ -7,6 +7,7 @@ import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
 import { Navigation } from "../components/Navigation";
 import { SocialSidebar } from "../components/SocialSidebar";
+import { CursorTrailOverlay } from "../components/CursorTrailOverlay";
 
 import { useEffect } from "react";
 
@@ -18,10 +19,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen font-sans antialiased">
+      <CursorTrailOverlay />
+      <HeroSection />
       <div className="max-w-[1000px] mx-auto">
         <Navigation />
         <SocialSidebar />
-        <HeroSection />
         <AboutSection />
         <ExperienceSection />
         <ProjectsSection />

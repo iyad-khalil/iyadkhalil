@@ -53,7 +53,9 @@ export function SocialSidebar() {
           custom={0}
         ></motion.div>
         <motion.a
-          href="tel:+212689159133"
+          href="https://wa.me/212689159133"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-[#8892B0] hover:text-teal-400 transition-all duration-300 font-mono text-sm tracking-wider vertical-text mt-6"
           variants={itemVariants}
           custom={1}

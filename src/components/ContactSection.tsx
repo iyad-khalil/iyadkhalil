@@ -72,9 +72,11 @@ export function ContactSection() {
               <Mail size={24} />
             </a>
             <a
-              href="tel:+212689159133"
+              href="https://wa.me/212689159133"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[#8892B0] hover:text-teal-400 transition-colors duration-300"
-              aria-label="Phone"
+              aria-label="WhatsApp"
             >
               <Phone size={24} />
             </a>

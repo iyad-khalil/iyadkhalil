@@ -1,7 +1,7 @@
 export const LINKS = {
   LINKEDIN: "https://linkedin.com/in/iyad-khalil",
   EMAIL: "mailto:iyad.khalil@falakcompany.com",
-  PHONE: "tel:+212689159133",
+  PHONE: "https://wa.me/212689159133",
   RESUME_EN: "/attached_assets/Iyad_Khalil_Resume_US.pdf",
   RESUME_FR: "/attached_assets/Iyad_Khalil_CV_FR.pdf"
 };

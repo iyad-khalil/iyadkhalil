@@ -70,21 +70,30 @@ export function HeroSection() {
       id="home"
       className="relative min-h-screen flex items-center justify-center py-24 px-6"
     >
-      <div className="relative z-10 w-full">
+      <div className="relative z-10 w-full max-w-[1000px] mx-auto">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid w-full grid-cols-1 lg:grid-cols-[360px_minmax(0,1fr)] items-center gap-10 lg:gap-14"
+          className="grid w-full grid-cols-1 lg:grid-cols-[280px_auto] items-center justify-center gap-10 lg:gap-24"
         >
-          <motion.div
-            className="relative mx-auto lg:mx-0 w-[280px] h-[280px] md:w-[340px] md:h-[340px] lg:mt-2 shrink-0"
+          <motion.p
+            className="text-[15px] md:hidden text-center -mb-4"
+            style={{ color: "#8892B0" }}
             variants={itemVariants}
           >
-            <HeroBackground pointCount={1400} speed={0.5} alpha={0.9} />
+            For the full interactive experience, open this portfolio on desktop.
+          </motion.p>
+
+          <motion.div
+            id="hero-animation-zone"
+            className="relative mx-auto lg:mx-0 w-[300px] h-[300px] md:w-[360px] md:h-[360px] lg:mt-2 shrink-0"
+            variants={itemVariants}
+          >
+            <HeroBackground pointCount={1800} speed={0.5} alpha={0.9} />
           </motion.div>
 
-          <div className="w-full max-w-[560px] justify-self-center lg:justify-self-start text-center lg:text-left">
+          <div className="max-w-[500px] text-center lg:text-left">
             <motion.h1
               className="text-[56px] font-bold mb-4"
               style={{ color: "#8892B0" }}
@@ -102,17 +111,6 @@ export function HeroSection() {
               <span className="inline-block w-0.5 h-6 bg-primary ml-1 animate-blink"></span>
             </motion.h2>
 
-            <motion.p
-              className="text-[16px] mb-10"
-              style={{ color: "#8892B0" }}
-              variants={itemVariants}
-            >
-              Artificial Intelligence Engineer from Morocco. I build full-stack,
-              end-to-end products, combining software engineering, data, and
-              applied AI; with a focus on production quality, scalability, and
-              real business value.
-            </motion.p>
-
             <motion.div variants={itemVariants}>
               <a
                 href="mailto:iyad.khalil@falakcompany.com"
@@ -121,6 +119,7 @@ export function HeroSection() {
                 Say Hi!
               </a>
             </motion.div>
+
           </div>
         </motion.div>
       </div>

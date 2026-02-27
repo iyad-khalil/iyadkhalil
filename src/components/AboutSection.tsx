@@ -56,7 +56,7 @@ export function AboutSection() {
                   href="https://univ-cotedazur.fr/"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-teal-400 hover:underline font-sans"
+                  className="text-teal-400 hover:underline font-sans text-[18px]"
                 >
                   Université Côte d’Azur
                 </a>

@@ -122,26 +122,6 @@ export function MobileMenu() {
                   </button>
                 </motion.div>
               ))}
-              
-              <motion.div
-                custom={navItems.length}
-                variants={menuItemVariants}
-                initial="closed"
-                animate="open"
-                exit={{
-                  opacity: 0,
-                  y: 20,
-                  transition: { duration: 0.3 }
-                }}
-              >
-                <a 
-                  href="/attached_assets/Iyad_Khalil_Resume_US.pdf" 
-                  className="mt-8 px-6 py-3 border-2 border-teal-400 text-teal-400 rounded hover:bg-teal-400/10 transition-all duration-300"
-                  download
-                >
-                  Resume
-                </a>
-              </motion.div>
             </nav>
           </motion.div>
         )}

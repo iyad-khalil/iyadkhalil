@@ -16,7 +16,7 @@ export function ExperienceSection() {
       title: "AI/ML Engineer",
       company: "BLINK PHARMA",
       location: "Casablanca, Morocco || Remote",
-      period: "March 2025 - Present",
+      period: "March 2025 - September 2025",
       responsibilities: [
         "Developed a hybrid LSTM + XGBoost model for multivariate forecasting of pharmacy revenue based on enriched time series data.",
         "Engineered 25+ explanatory features including sales history, holidays, seasonality, patient behavior, volatility, long-term trends, and more.",
@@ -122,7 +122,7 @@ export function ExperienceSection() {
               {experiences.map((exp, index) => (
                 <button
                   key={index}
-                  className={`uppercase whitespace-nowrap px-4 py-3 text-left text-[20px] transition-all duration-300 ${
+                  className={`whitespace-nowrap px-4 py-3 text-left text-[20px] transition-all duration-300 ${
                     activeTab === index 
                       ? "text-primary border-primary border-b-2 md:border-b-0 md:border-l-2 md:-ml-[1px]" 
                       : "hover:text-primary hover:bg-navy-900/50"
