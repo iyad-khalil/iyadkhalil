@@ -90,7 +90,7 @@ export function HeroSection() {
             className="relative mx-auto lg:mx-0 w-[300px] h-[300px] md:w-[360px] md:h-[360px] lg:mt-2 shrink-0"
             variants={itemVariants}
           >
-            <HeroBackground pointCount={1800} speed={0.5} alpha={0.9} />
+            <HeroBackground pointCount={1800} speed={0.5} alpha={0.8} />
           </motion.div>
 
           <div className="max-w-[500px] text-center lg:text-left">

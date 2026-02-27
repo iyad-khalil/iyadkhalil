@@ -84,6 +84,7 @@ export function CursorTrailOverlay() {
             const c = p.createCanvas(window.innerWidth, window.innerHeight);
             c.parent(host);
             p.pixelDensity(Math.min(window.devicePixelRatio || 1, 2));
+            p.colorMode(p.HSB, 360, 100, 100, 1);
             p.rectMode(p.CENTER);
             p.noStroke();
           };
@@ -146,13 +147,10 @@ export function CursorTrailOverlay() {
             for (let i = trail.length - 1; i >= 0; i--) {
               const t = i / (trail.length - 1);
               const diamondSize = baseDashLength * 0.7 + (1 - t) * 5.2;
-              const a = (1 - t) * 185;
+              const alpha = (1 - t) * 0.85;
               const curr = trail[i];
-              if (i % 4 === 0) {
-                p.fill(100, 255, 218, a);
-              } else {
-                p.fill(204, 214, 246, a * 0.8);
-              }
+              const hue = (orbitPhase * 120 + (1 - t) * 360) % 360;
+              p.fill(hue, 90, 100, alpha);
               p.push();
               p.translate(curr.x, curr.y);
               p.rotate(Math.PI / 4);
