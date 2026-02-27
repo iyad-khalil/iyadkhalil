@@ -12,7 +12,7 @@ export function SkillsSection() {
       title: "Programming",
       skills: [
         "Python", "TypeScript", "React", "Java", "JavaScript", "Dart", "HTML", "CSS", "PHP",
-        "SQL (MySQL, PostgreSQL)"
+        "SQL (MySQL, PostgreSQL)", "PostgreSQL", "Next.js"
       ],
     },
     {
@@ -27,6 +27,19 @@ export function SkillsSection() {
       title: "LLM & NLP",
       skills: [
         "Prompt Engineering", "Retrieval-Augmented Generation (RAG)", "Azure OpenAI", "LangChain Agents"
+      ],
+    },
+    {
+      title: "Production Readiness",
+      skills: [
+        "System Design",
+        "MLOps",
+        "CI/CD",
+        "Kubernetes",
+        "Observability (Monitoring/Logging)",
+        "Security & Auth",
+        "Product Analytics",
+        "Prompt Engineering / LLM Evaluation",
       ],
     },
     {
@@ -80,10 +93,10 @@ export function SkillsSection() {
           animate={inView ? "visible" : "hidden"}
         >
           <motion.h2
-            className="text-3xl font-bold text-white mb-16 flex items-center"
+            className="text-3xl font-bold text-[#CCD6F6] mb-16 flex items-center"
             variants={itemVariants}
           >
-            <span className="mr-4 font-thin" style={{ color: "#ccd6f6" }}>/</span> skills
+            <span className="mr-4 font-thin" style={{ color: "#8892B0" }}>/</span> skills
           </motion.h2>
 
           <motion.div
@@ -101,7 +114,7 @@ export function SkillsSection() {
                       ? "text-primary border-primary border-b-2 md:border-b-0 md:border-l-2 md:-ml-[1px]"
                       : "hover:text-primary hover:bg-navy-900/50"
                   }`}
-                  style={activeCategory !== index ? { color: "#ccd6f6" } : {}}
+                  style={activeCategory !== index ? { color: "#8892B0" } : {}}
                 >
                   {cat.title}
                 </button>
@@ -113,7 +126,7 @@ export function SkillsSection() {
               className="md:w-3/4 md:pl-8"
               variants={itemVariants}
             >
-              <h3 className="text-xl font-semibold text-white mb-4">
+              <h3 className="text-xl font-semibold text-[#CCD6F6] mb-4">
                 {skillCategories[activeCategory].title}
               </h3>
               <div className="flex flex-wrap gap-3">
@@ -121,7 +134,7 @@ export function SkillsSection() {
                   <div
                     key={i}
                     className="px-4 py-2 bg-navy-800 border border-navy-600 rounded-md text-sm font-mono hover:border-primary hover:text-primary transition-all duration-300"
-                    style={{ color: "#ccd6f6" }}
+                    style={{ color: "#8892B0" }}
                   >
                     {skill}
                   </div>

@@ -77,7 +77,7 @@ export function MobileMenu() {
     <>
       <button 
         onClick={() => setIsOpen(true)}
-        className="md:hidden text-2xl text-slate-400 hover:text-teal-400 transition-colors duration-300"
+        className="md:hidden text-2xl text-[#8892B0] hover:text-teal-400 transition-colors duration-300"
         aria-label="Open menu"
       >
         <Menu size={24} />
@@ -94,7 +94,7 @@ export function MobileMenu() {
           >
             <button 
               onClick={() => setIsOpen(false)}
-              className="absolute top-6 right-6 text-3xl text-slate-300 hover:text-teal-400"
+              className="absolute top-6 right-6 text-3xl text-[#8892B0] hover:text-teal-400"
               aria-label="Close menu"
             >
               <X size={28} />
@@ -116,7 +116,7 @@ export function MobileMenu() {
                 >
                   <button
                     onClick={() => handleNavClick(item.id)}
-                    className="text-xl text-slate-300 hover:text-teal-400 transition-colors duration-300"
+                    className="text-xl text-[#8892B0] hover:text-teal-400 transition-colors duration-300"
                   >
                     {item.label}
                   </button>

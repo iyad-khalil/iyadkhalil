@@ -107,26 +107,27 @@ export function ExperienceSection() {
           animate={inView ? "visible" : "hidden"}
         >
           <motion.h2 
-            className="text-3xl font-bold text-white mb-16 flex items-center"
+            className="text-3xl font-bold text-[#CCD6F6] mb-16 flex items-center"
             variants={itemVariants}
           >
-            <span className="mr-4 font-thin" style={{ color: "#ccd6f6" }}>/</span> experience
+            <span className="mr-4 font-thin" style={{ color: "#8892B0" }}>/</span> experience
           </motion.h2>
 
           <motion.div 
             className="flex flex-col md:flex-row gap-8 md:gap-16"
+            style={{ fontFamily: "NTR, sans-serif", fontSize: "20px" }}
             variants={containerVariants}
           >
             <div className="md:w-1/4 flex md:flex-col overflow-x-auto md:overflow-x-visible space-x-4 md:space-x-0 md:space-y-1 border-b md:border-b-0 md:border-l border-slate-700 pb-4 md:pb-0">
               {experiences.map((exp, index) => (
                 <button
                   key={index}
-                  className={`uppercase whitespace-nowrap px-4 py-3 text-left text-sm transition-all duration-300 ${
+                  className={`uppercase whitespace-nowrap px-4 py-3 text-left text-[20px] transition-all duration-300 ${
                     activeTab === index 
                       ? "text-primary border-primary border-b-2 md:border-b-0 md:border-l-2 md:-ml-[1px]" 
                       : "hover:text-primary hover:bg-navy-900/50"
                   }`}
-                  style={activeTab !== index ? { color: "#ccd6f6" } : {}}
+                  style={activeTab !== index ? { color: "#8892B0" } : {}}
                   onClick={() => setActiveTab(index)}
                 >
                   {exp.company}
@@ -139,16 +140,16 @@ export function ExperienceSection() {
               variants={itemVariants}
             >
               <div className="mb-2">
-                <h3 className="text-xl text-white font-bold">
-                  {experiences[activeTab].title} <span className="text-primary">@ {experiences[activeTab].company}</span>
+                <h3 className="text-xl text-[#CCD6F6] font-bold">
+                  {experiences[activeTab].title} <span className="text-primary font-sans">@ {experiences[activeTab].company}</span>
                 </h3>
-                <p className="text-sm mt-1" style={{ color: "#ccd6f6" }}>{experiences[activeTab].period}</p>
-                <p className="text-sm" style={{ color: "#ccd6f6" }}>{experiences[activeTab].location}</p>
+                <p className="text-[20px] mt-1" style={{ color: "#8892B0" }}>{experiences[activeTab].period}</p>
+                <p className="text-[20px]" style={{ color: "#8892B0" }}>{experiences[activeTab].location}</p>
               </div>
 
               <ul className="space-y-4 mt-6">
                 {experiences[activeTab].responsibilities.map((item, i) => (
-                  <li key={i} className="flex" style={{ color: "#ccd6f6" }}>
+                  <li key={i} className="flex" style={{ color: "#8892B0" }}>
                     <span className="text-primary mr-2 mt-1.5 flex-shrink-0 text-xs">▹</span>
                     <span>{item}</span>
                   </li>

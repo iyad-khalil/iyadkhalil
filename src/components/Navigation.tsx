@@ -70,7 +70,7 @@ export function Navigation() {
                 className={`text-base font-medium relative ${
                   activeSection === link.id
                     ? "text-primary"
-                    : "text-[#ccd6f6] hover:text-primary"
+                    : "text-[#8892B0] hover:text-primary"
                 } transition-colors duration-300`}
               >
                 {link.label}

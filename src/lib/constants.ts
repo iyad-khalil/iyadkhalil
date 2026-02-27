@@ -1,8 +1,7 @@
 export const LINKS = {
-  GITHUB: "https://github.com/iyad-khalil",
   LINKEDIN: "https://linkedin.com/in/iyad-khalil",
-  EMAIL: "mailto:iyademsig1@gmail.com",
-  PHONE: "tel:+212654890931",
+  EMAIL: "mailto:iyad.khalil@falakcompany.com",
+  PHONE: "tel:+212689159133",
   RESUME_EN: "/attached_assets/Iyad_Khalil_Resume_US.pdf",
   RESUME_FR: "/attached_assets/Iyad_Khalil_CV_FR.pdf"
 };
@@ -87,7 +86,6 @@ export const PROJECTS = {
     description: "A deep learning solution using CNN to classify mammogram images into benign, malignant, or normal categories. Achieved 67.69% validation accuracy with over 4.7M parameters and deployed as a user-friendly Flask web application.",
     image: "https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
     technologies: ["Python", "TensorFlow", "Keras", "Flask", "Deep Learning"],
-    githubLink: "https://github.com/iyad-khalil/Breast_Cancer_Prediction",
     liveLink: "#"
   }
 };

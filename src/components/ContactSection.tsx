@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Linkedin, Mail, Phone } from "lucide-react";
 import React from "react";
 export function ContactSection() {
   const [ref, inView] = useInView({
@@ -41,53 +41,39 @@ export function ContactSection() {
             05. What's Next?
           </motion.p>
           
-          <motion.h2 className="text-3xl md:text-4xl font-bold text-white mb-6" variants={itemVariants}>
+          <motion.h2 className="text-3xl md:text-4xl font-bold text-[#CCD6F6] mb-6" variants={itemVariants}>
             Get In Touch
           </motion.h2>
           
-          <motion.p className="text-slate-400 mb-10" variants={itemVariants}>
-            I'm currently looking for new opportunities in AI/ML engineering and data science. Whether you have a question or just want to say hi, 
-            I'll surely get back to you!
-          </motion.p>
-          
           <motion.div variants={itemVariants}>
             <a
-              href="mailto:iyademsig1@gmail.com"
+              href="mailto:iyad.khalil@falakcompany.com"
               className="inline-block px-8 py-4 border-2 border-teal-400 text-teal-400 rounded-md font-medium hover:bg-teal-400/10 transition-all duration-300 text-lg"
             >
-              Say Hello
+              Don't be shy say Hi
             </a>
           </motion.div>
           
           <motion.div className="mt-16 flex justify-center space-x-8" variants={itemVariants}>
             <a
-              href="https://github.com/iyad-khalil"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 hover:text-teal-400 transition-colors duration-300"
-              aria-label="GitHub"
-            >
-              <Github size={24} />
-            </a>
-            <a
               href="https://linkedin.com/in/iyad-khalil"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-teal-400 transition-colors duration-300"
+              className="text-[#8892B0] hover:text-teal-400 transition-colors duration-300"
               aria-label="LinkedIn"
             >
               <Linkedin size={24} />
             </a>
             <a
-              href="mailto:iyademsig1@gmail.com"
-              className="text-slate-400 hover:text-teal-400 transition-colors duration-300"
+              href="mailto:iyad.khalil@falakcompany.com"
+              className="text-[#8892B0] hover:text-teal-400 transition-colors duration-300"
               aria-label="Email"
             >
               <Mail size={24} />
             </a>
             <a
-              href="tel:+212654890931"
-              className="text-slate-400 hover:text-teal-400 transition-colors duration-300"
+              href="tel:+212689159133"
+              className="text-[#8892B0] hover:text-teal-400 transition-colors duration-300"
               aria-label="Phone"
             >
               <Phone size={24} />

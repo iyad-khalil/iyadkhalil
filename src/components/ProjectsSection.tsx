@@ -1,7 +1,18 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Github, ExternalLink, Folder } from "lucide-react";
-import React from "react";
+import sugarncoImage from "../public/sugarnco.png";
+import qpmImage from "../public/qpmmedecine.png";
+import emedImage from "../public/e-medpro.png";
+import drAmalImage from "../public/docteuramalchahid.png";
+import svmImage from "../public/svmcompagnies.png";
+
+type Project = {
+  title: string;
+  liveHref: string;
+  description: string;
+  image: string;
+  category: "SAAS" | "WEBSITES";
+};
 
 export function ProjectsSection() {
   const [ref, inView] = useInView({
@@ -9,16 +20,57 @@ export function ProjectsSection() {
     threshold: 0.1,
   });
 
-  const projects = [
+  const projects: Project[] = [
     {
-      title: "Breast Cancer Prediction Using AI",
-      description: "Built a CNN model to classify mammogram images into Benign, Malignant, or Normal. Fine-tuned 4.7M+ parameters, achieving 67.69% validation accuracy. Integrated into a Flask web app with image upload and prediction output.",
-      image: "https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-      technologies: ["Python", "Flask", "Keras", "TensorFlow"],
-      githubLink: "https://github.com/iyad-khalil/Breast_Cancer_Prediction",
-      liveLink: "#",
-      date: "December 2024 - February 2025",
-      featured: true
+      title: "Sugarnco",
+      liveHref: "https://sugarnco.vercel.app/",
+      description:
+        "A modern commerce-focused website built for clarity, trust, and conversion.",
+      image: sugarncoImage,
+      category: "WEBSITES",
+    },
+    {
+      title: "QPM Médecine",
+      liveHref: "https://qpm-medecine.ma/",
+      description:
+        "A focused learning platform built for medical exam preparation",
+      image: qpmImage,
+      category: "SAAS",
+    },
+    {
+      title: "E-MED PRO",
+      liveHref: "https://e-med.ma/",
+      description:
+        "An intelligent operating system for dental clinics (Dental practice management software)",
+      image: emedImage,
+      category: "SAAS",
+    },
+    {
+      title: "Dr Chahid Amal",
+      liveHref: "https://www.drchahidamal.com/",
+      description:
+        "A comprehensive medical and aesthetic clinic custom website designed to present medical services",
+      image: drAmalImage,
+      category: "WEBSITES",
+    },
+    {
+      title: "SVM Compagnies",
+      liveHref: "http://svmcompagnies.vercel.app/",
+      description:
+        "A professional services website for home security and emergency interventions.",
+      image: svmImage,
+      category: "WEBSITES",
+    },
+  ];
+
+  const groupedProjects: Array<{
+    label: "SAAS" | "WEBSITES";
+    items: Project[];
+  }> = [
+    { label: "SAAS", items: projects.filter((project) => project.category === "SAAS") },
+    {
+      label: "WEBSITES",
+      items: projects.filter((project) => project.category === "WEBSITES"),
     },
   ];
 
@@ -28,7 +80,7 @@ export function ProjectsSection() {
       opacity: 1,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.2,
+        staggerChildren: 0.18,
       },
     },
   };
@@ -44,128 +96,73 @@ export function ProjectsSection() {
 
   return (
     <section id="projects" className="pt-24 pb-12 px-6">
-      <div>
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
+        <motion.h2
+          className="text-3xl font-bold text-[#CCD6F6] mb-16 flex items-center"
+          variants={itemVariants}
         >
-          <motion.h2 
-            className="text-3xl font-bold text-white mb-16 flex items-center"
-            variants={itemVariants}
-          >
-            <span className="mr-4 font-thin" style={{ color: "#ccd6f6" }}>/</span> projects
-          </motion.h2>
-          
-          
-          {projects.filter(project => project.featured).map((project, index) => (
-            <motion.div 
-              key={project.title}
-              variants={itemVariants}
-              className="mb-24"
-            >
-              <div className="relative md:grid md:grid-cols-12 gap-4 items-center">
-                
-                <div className={`md:col-span-7 relative group mb-6 md:mb-0 ${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                  <img 
-                    src={project.image}
-                    alt={project.title}
-                    className="rounded-lg w-full h-auto filter brightness-50 group-hover:brightness-100 transition-all duration-300"
-                  />
-                  <a 
-                    href={project.githubLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="absolute inset-0 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          <span className="mr-4 font-thin" style={{ color: "#8892B0" }}>
+            /
+          </span>{" "}
+          projects
+        </motion.h2>
+
+        <motion.div className="space-y-14" variants={containerVariants}>
+          {groupedProjects.map((group) => (
+            <motion.div key={group.label} variants={itemVariants} className="space-y-6">
+              <h3 className="text-[22px] font-bold text-[#CCD6F6] tracking-[0.14em]">
+                {group.label}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {group.items.map((project) => (
+                  <article
+                    key={project.title}
+                    className="bg-navy-800/40 rounded-2xl p-5 md:p-6"
                   >
-                    <div className="bg-navy-950 bg-opacity-80 rounded-lg p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <span className="text-primary font-semibold">View Project</span>
+                    <div className="space-y-4">
+                      <a
+                        href={project.liveHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <img
+                          src={project.image}
+                          alt={`${project.title} preview`}
+                          className="w-full h-auto rounded-xl object-cover"
+                        />
+                      </a>
+                      <div className="space-y-4" style={{ color: "#8892B0" }}>
+                        <div className="flex items-center gap-3">
+                          <h4 className="text-[28px] font-bold text-[#CCD6F6]">
+                            {project.title}
+                          </h4>
+                        </div>
+
+                        <p className="text-[18px]">{project.description}</p>
+
+                        <a
+                          href={project.liveHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex mt-2 px-5 py-2 border border-primary text-primary rounded-md hover:bg-primary/10 transition-colors duration-300"
+                        >
+                          Visit website
+                        </a>
+                      </div>
                     </div>
-                  </a>
-                </div>
-                
-                
-                <div className={`md:col-span-5 ${index % 2 === 1 ? 'md:order-1 md:pr-6 text-right' : 'md:pl-6'}`}>
-                  <p className="text-primary font-mono mb-2">Featured Project</p>
-                  <h3 className="text-2xl font-semibold text-white mb-4">{project.title}</h3>
-                  <div className="bg-navy-800 p-6 rounded-lg shadow-xl mb-4">
-                    <p style={{ color: "#ccd6f6" }}>
-                      {project.description}
-                    </p>
-                  </div>
-                  <div className={`flex flex-wrap gap-2 ${index % 2 === 1 ? 'justify-end' : ''}`}>
-                    {project.technologies.map((tech, i) => (
-                      <span key={i} className="text-sm font-mono" style={{ color: "#ccd6f6" }}>{tech}</span>
-                    ))}
-                  </div>
-                  <div className={`flex gap-4 mt-4 ${index % 2 === 1 ? 'justify-end' : ''}`}>
-                    <a 
-                      href={project.githubLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-white hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
-                    </a>
-                    <a 
-                      href={project.liveLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-white hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                  </div>
-                </div>
+                  </article>
+                ))}
               </div>
             </motion.div>
           ))}
-          
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
-            variants={containerVariants}
-          >
-            {projects.filter(project => !project.featured).map((project) => (
-              <motion.div
-                key={project.title}
-                className="bg-navy-800 rounded-lg p-6 hover:translate-y-[-10px] transition-transform duration-300"
-                variants={itemVariants}
-              >
-                <div className="flex justify-between items-center mb-4">
-                  <Folder className="text-primary" size={30} />
-                  <div className="flex gap-4">
-                    <a 
-                      href={project.githubLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-white hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={18} />
-                    </a>
-                    <a 
-                      href={project.liveLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-white hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={18} />
-                    </a>
-                  </div>
-                </div>
-                <h4 className="text-xl font-semibold text-white mb-3">{project.title}</h4>
-                <p className="text-sm mb-4" style={{ color: "#ccd6f6" }}>{project.description}</p>
-                <p className="text-primary text-xs mb-4">{project.date}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, i) => (
-                    <span key={i} className="text-xs font-mono" style={{ color: "#ccd6f6" }}>{tech}</span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
