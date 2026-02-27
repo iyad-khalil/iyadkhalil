@@ -13,7 +13,7 @@ export function ExperienceSection() {
 
   const experiences = [
     {
-      title: "AI/ML Engineer",
+      title: "AI Agent for Pharmacy Sales Forecasting",
       company: "BLINK PHARMA",
       location: "Casablanca, Morocco || Remote",
       period: "March 2025 - September 2025",
@@ -27,6 +27,20 @@ export function ExperienceSection() {
         "Implemented a robust MLOps architecture with model versioning, virtual environments (Conda), API monitoring (Postman), and a fully reproducible pipeline."
       ],
       skills: ["Python", "FastAPI", "Docker", "Azure", "XGBoost", "LSTM", "LangChain", "Streamlit"]
+    },
+    {
+      title: "Fraud Detection System for Health Insurance Claims",
+      company: "BLINK PHARMA 2*",
+      location: "Casablanca, Morocco || Remote",
+      period: "March 2025 - September 2025",
+      responsibilities: [
+        "Built an AI-first pipeline using GPT-4o (Azure OpenAI) to analyze 1,500+ prescriptions/day with p95 latency of 900ms, enabling real-time compliance checks.",
+        "Implemented tool-calling JSON extraction (dosage, indications, contraindications, risks, etc.) from unstructured HTML posology, achieving 100% extraction accuracy across validation cases.",
+        "Integrated Blink Pharmacie API (6,000+ drugs) to enrich metadata and compute drug-drug interaction severity (low/med/high) aligned with pharmacist validation.",
+        "Designed anomaly detection and multi-drug risk workflows to support clinical decision-making; system validated against Moroccan drug standards and pharmacist review.",
+        "Tested on real-world fraudulent prescriptions with 100% detection accuracy, deployed as a FastAPI + Docker service on Azure with interoperable JSON/text reports and full auditability."
+      ],
+      skills: ["GPT-4o", "Azure OpenAI", "FastAPI", "Docker", "Azure", "Fraud Detection", "Tool Calling", "Drug Interaction Analysis"]
     },
     {
       title: "Artificial Intelligence Engineer",
