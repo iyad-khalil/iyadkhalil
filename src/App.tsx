@@ -7,6 +7,8 @@ import NotFound from "./pages/not-found";
 import Home from "./pages/home";
 import { useEffect } from "react";
 import React from "react";
+import Snowfall from "react-snowfall";
+import SplashCursor from "./components/SplashCursor";
 
 function Router() {
   // Scroll to top on route change
@@ -32,6 +34,18 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <div className="bg-background text-foreground">
+          <SplashCursor />
+          <Snowfall
+            color="#9db4d3"
+            snowflakeCount={160}
+            style={{
+              position: "fixed",
+              width: "100vw",
+              height: "100vh",
+              zIndex: 20,
+              pointerEvents: "none",
+            }}
+          />
           <Router />
         </div>
       </TooltipProvider>
